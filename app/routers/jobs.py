@@ -1,3 +1,9 @@
+from fastapi import APIRouter, Depends
+from sqlalchemy.orm import Session
+
+from app.database import get_db
+from app import crud
+from app.schemas import AnalyticsResponse
 from fastapi import (
     APIRouter,
     Depends,
@@ -88,7 +94,12 @@ def get_jobs(
 
     return query.all()
 
-
+@router.get("/analytics", response_model=AnalyticsResponse)
+def get_analytics(
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user)
+):
+    return crud.get_job_analytics(db, current_user.id)
 # ============================================================
 # 3. GET ONE JOB
 # GET /jobs/{job_id}

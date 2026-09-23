@@ -60,3 +60,8 @@ class JobResponse(BaseModel):
     model_config = ConfigDict(
         from_attributes=True
     )
+
+class AnalyticsResponse(BaseModel):
+    total_applications: int
+    by_status: dict[str, int]
+    interview_rate: float
