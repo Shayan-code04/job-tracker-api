@@ -69,3 +69,12 @@ The application uses PostgreSQL.
 - Local development uses the `DATABASE_URL` environment variable.
 - Production database is hosted on Render PostgreSQL.
 - Database credentials are stored in `.env` and are not committed to Git.
+
+
+
+
+## Live API
+
+**Swagger UI:** https://job-tracker-api-b3t8.onrender.com/docs
+
+**API Base URL:** https://job-tracker-api-b3t8.onrender.com
