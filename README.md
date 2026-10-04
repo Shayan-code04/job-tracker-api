@@ -62,3 +62,10 @@ job-tracker-api/
 ├── README.md
 └── requirements.txt
 
+## Database
+
+The application uses PostgreSQL.
+
+- Local development uses the `DATABASE_URL` environment variable.
+- Production database is hosted on Render PostgreSQL.
+- Database credentials are stored in `.env` and are not committed to Git.
