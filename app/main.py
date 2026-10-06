@@ -8,7 +8,7 @@ from app.database import Base, engine
 # Import models so SQLAlchemy knows about them
 from app.models import User, Job
 
-from app.routers import auth, jobs
+from app.routers import auth, jobs, ai
 
 #CORS (Cross-Origin Resource Sharing) middleware
 from fastapi.middleware.cors import CORSMiddleware
@@ -63,6 +63,12 @@ app.include_router(
 # Job CRUD routes
 app.include_router(
     jobs.router
+)
+
+
+# AI routes
+app.include_router(
+    ai.router
 )
 
 

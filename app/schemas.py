@@ -2,10 +2,7 @@ from enum import Enum
 
 from pydantic import BaseModel, ConfigDict
 
-
-# ============================================================
-# USER SCHEMAS
-# ============================================================
+'''# USER SCHEMAS'''
 
 class UserCreate(BaseModel):
     email: str
@@ -26,9 +23,7 @@ class Token(BaseModel):
     token_type: str
 
 
-# ============================================================
-# JOB SCHEMAS
-# ============================================================
+'''# JOB SCHEMAS'''
 
 class JobStatus(str, Enum):
     APPLIED = "applied"
@@ -65,3 +60,7 @@ class AnalyticsResponse(BaseModel):
     total_applications: int
     by_status: dict[str, int]
     interview_rate: float
+
+'''#AI SCHEMAS'''
+class GeminiRequest(BaseModel):
+    prompt: str
