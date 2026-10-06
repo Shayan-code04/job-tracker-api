@@ -10,6 +10,8 @@ from app.models import User, Job
 
 from app.routers import auth, jobs
 
+#CORS (Cross-Origin Resource Sharing) middleware
+from fastapi.middleware.cors import CORSMiddleware
 
 # Create logger
 logger = logging.getLogger(__name__)
@@ -21,6 +23,17 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Job Tracker API"
+)
+# CORS configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
