@@ -2,7 +2,7 @@
 
 A RESTful backend API for managing and tracking job applications.
 
-Built with **FastAPI**, **PostgreSQL**, and **SQLAlchemy**, this project provides user authentication, job application management, filtering, and analytics through a secure API.
+Built with **FastAPI**, **PostgreSQL**, and **SQLAlchemy**, this project provides user authentication, job application management, filtering, analytics, and AI integration through a secure API.
 
 ---
 
@@ -19,6 +19,8 @@ Built with **FastAPI**, **PostgreSQL**, and **SQLAlchemy**, this project provide
 - Delete job applications
 - User-specific job access
 - Job application analytics
+- Gemini AI integration
+- AI-powered prompt endpoint
 - Automatic API documentation with Swagger UI
 - PostgreSQL database integration
 - Environment-based configuration
@@ -36,45 +38,29 @@ Built with **FastAPI**, **PostgreSQL**, and **SQLAlchemy**, this project provide
 - **Passlib / bcrypt**
 - **Uvicorn**
 - **python-dotenv**
+- **Google Gemini API**
 
 ---
 
 ## 📁 Project Structure
+
+```text
 job-tracker-api/
 │
 ├── app/
-│   ├── models/
-│   │   ├── job.py
-│   │   └── user.py
-│   │
 │   ├── routers/
 │   │   ├── auth.py
-│   │   └── jobs.py
+│   │   ├── jobs.py
+│   │   └── ai.py
 │   │
-│   ├── auth.py
 │   ├── crud.py
 │   ├── database.py
+│   ├── gemini.py
 │   ├── main.py
+│   ├── models.py
 │   └── schemas.py
 │
 ├── .env.example
 ├── .gitignore
 ├── README.md
 └── requirements.txt
-
-## Database
-
-The application uses PostgreSQL.
-
-- Local development uses the `DATABASE_URL` environment variable.
-- Production database is hosted on Render PostgreSQL.
-- Database credentials are stored in `.env` and are not committed to Git.
-
-
-
-
-## Live API
-
-**Swagger UI:** https://job-tracker-api-b3t8.onrender.com/docs
-
-**API Base URL:** https://job-tracker-api-b3t8.onrender.com
