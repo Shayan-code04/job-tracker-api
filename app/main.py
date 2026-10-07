@@ -24,6 +24,12 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="Job Tracker API"
 )
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"}
+
+
 # CORS configuration
 app.add_middleware(
     CORSMiddleware,
